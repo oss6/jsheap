@@ -26,4 +26,14 @@ suite('HeapTree', function () {
 		assert.equal(3, heap.root());
 	});
 	
+	
+	test('lastLeaf', function () {
+		heap = new ht();
+		assert.equal(undefined, heap.lastLeaf());
+		
+		heap = new ht({
+			src: [3, 2, 1]
+		});
+		assert.equal(1, heap.lastLeaf());
+	});
 });
