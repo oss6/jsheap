@@ -11,9 +11,19 @@ suite('HeapTree', function () {
 	
 	test('isEmpty should return false when the array length is > 0', function () {
 		heap = new ht({
-			src: [1, 2, 3]
+			src: [3, 2, 1]
 		});
 		assert.equal(false, heap.isEmpty());
+	});
+	
+	test('root', function () {
+		heap = new ht();
+		assert.equal(undefined, heap.root());
+		
+		heap = new ht({
+			src: [3, 2, 1]
+		});
+		assert.equal(3, heap.root());
 	});
 	
 });
