@@ -1,4 +1,5 @@
 var HeapTree = function (params) {
+	params = params || {};
     var _arr = params.src || [];
     var _cmp = params.comparator || function (a, b) { return a - b; };
     
@@ -8,7 +9,7 @@ var HeapTree = function (params) {
     
     var intDiv = function (a, b) {
 		var result = a / b;
-		return result >= 0 Math.floor(result) : Math.ceil(result);
+		return result >= 0 ? Math.floor(result) : Math.ceil(result);
 	}
     
     this.root = function () {

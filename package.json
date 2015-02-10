@@ -12,6 +12,13 @@
     "trees",
     "binary"
   ],
+  "repository" : {
+  	"type" : "git",
+  	"url" : "http://github.com/oss6/jsheap.git"
+  },
+  "devDependencies": {
+    "mocha": "2.2.1"
+  },
   "license": "MIT",
   "author": "Ossama Edbali <ossedb@gmail.com> (https://ossamaedbali.wordpress.com)"
 }
