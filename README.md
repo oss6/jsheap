@@ -11,8 +11,14 @@ It is useful data structure when you need to remove the object with the highest 
 ## Time complexity
 
 ## Install
+```sh
+$ npm install --save jsheap
+```
 
 ## Usage
+```js
+
+```
 
 ## API
 
