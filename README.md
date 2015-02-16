@@ -17,3 +17,29 @@ It is useful data structure when you need to remove the object with the highest 
 ## API
 
 ### HeapTree(params)
+
+### HeapTree.heapify(arr)
+
+### ht.root()
+
+### ht.lastLeaf()
+
+### ht.isEmpty()
+
+### ht.level(i)
+
+### ht.parent(i)
+
+### ht.left(i)
+
+### ht.right(i)
+
+### ht.bubbleUp(i)
+
+### ht.bubbleDown(i)
+
+### ht.insert(k)
+
+### ht.deleteRoot()
+
+### ht.delete(i)
