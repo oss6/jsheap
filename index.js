@@ -1,6 +1,6 @@
-var HeapTree = function (arr, comparator) {
-    var _arr = arr;
-    var _cmp = comparator;
+var HeapTree = function (params) {
+    var _arr = params.src || [];
+    var _cmp = params.comparator || function (a, b) { return a - b; };
     
     Math.log2 = Math.log2 || function(x) {
   		return Math.log(x) / Math.LN2;
