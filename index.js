@@ -38,10 +38,6 @@ var HeapTree = function (arr, comparator) {
     this.right = function (i) {
     	return 2 * i + 1;
     }
-    	
-    this.heapify = function (arr) {
-	
-    };
 	
 	this.bubbleUp = function (i) {
     	if (i === 0) // is root
@@ -103,5 +99,10 @@ var HeapTree = function (arr, comparator) {
     	this.bubbleDown(i);
     };
 }
+
+HeapTree.heapify = function (arr) {
+	for (var i = arr.length - 1; i > 0; i--)
+		this.bubbleDown(i);
+};
 
 module.exports = HeapTree;
