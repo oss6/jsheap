@@ -57,7 +57,32 @@ var HeapTree = function (arr, comparator) {
     }
 	
 	this.bubbleDown = function (i) {
+		var n = arr.length - 1;
+		var tmp;
 		
+		if (left(i) > n) // no children
+			return
+		else if (right(i) > n) { // only left child
+			if (_arr[i] < _arr[left(i)]) {
+				tmp = _arr[i];
+				_arr[i] = _arr[left(i)];
+				_arr[left(i)] = tmp;
+			}
+		}
+		else { // Two children
+			if (_arr[left(i)] > _arr[right(i)] && _arr[i] < _arr[left(i)]) {
+				tmp = _arr[i];
+				_arr[i] = _arr[left(i)];
+				_arr[left(i)] = tmp;
+				bubbleDown(left(i));
+			}
+			else if (_arr[i] < _arr[right(i)]) {
+				tmp = _arr[i];
+				_arr[i] = _arr[right(i)];
+				_arr[right(i)] = tmp;
+				bubbleDown(right(i));
+			}
+		}
 	}
 	
     this.insert = function (k) {
