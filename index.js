@@ -2,6 +2,15 @@ var HeapTree = function (arr, comparator) {
     var _arr = arr;
     var _cmp = comparator;
     
+    Math.log2 = Math.log2 || function(x) {
+  		return Math.log(x) / Math.LN2;
+	};
+    
+    var intDiv = function (a, b) {
+		var result = a / b;
+		return result >= 0 Math.floor(result) : Math.ceil(result);
+	}
+    
     this.root = function () {
     	return this.isEmpty() ? undefined : _arr[0];
     };
@@ -14,8 +23,20 @@ var HeapTree = function (arr, comparator) {
     	return _arr.length === 0;
     };
     
+    this.level = function (i) {
+    	return Math.floor(Math.log2(i));
+    }
+    
     this.parent = function (i) {
-    	
+    	return intDiv(i, 2);
+    };
+    
+    this.left = function (i) {
+    	return 2 * i;
+    }
+    
+    this.right = function (i) {
+    	return 2 * i + 1;
     }
     	
     this.heapify = function (arr) {
