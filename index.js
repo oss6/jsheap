@@ -36,7 +36,7 @@ var HeapTree = function (arr, comparator) {
     }
 	
 	this.bubbleDown = function (i) {
-	
+		
 	}
 	
     this.insert = function (k) {
@@ -48,12 +48,13 @@ var HeapTree = function (arr, comparator) {
     	_arr[0] = this.lastLeaf();
     	_arr.shift();
     	this.bubbleDown(0);
-    	/*heap[1] = heap[n]
-		bubbleDown(1,heap,n-1)*/
     };
     
-    this.del = function (k) {
-    
+    this.del = function (i) {
+    	_arr[i] = this.lastLeaf();
+    	_arr.shift();
+    	this.bubbleUp(i);
+    	this.bubbleDown(i);
     };
 }
 
