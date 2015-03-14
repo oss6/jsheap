@@ -35,9 +35,21 @@ var HeapTree = function (arr, comparator) {
     	}
     }
 	
+	this.bubbleDown = function (i) {
+	
+	}
+	
     this.insert = function (k) {
 		_arr.push(k);
 		this.bubbleUp(_arr.length - 1);
+    };
+    
+    this.deleteRoot = function () {
+    	_arr[0] = this.lastLeaf();
+    	_arr.shift();
+    	this.bubbleDown(0);
+    	/*heap[1] = heap[n]
+		bubbleDown(1,heap,n-1)*/
     };
     
     this.del = function (k) {
