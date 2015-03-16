@@ -26,7 +26,11 @@ var HeapTree = function (arr, comparator) {
     	if (i === 0) // is root
     		return
     	else if (heap[i] > heap[this.parent(i)]) {
-    		// swap and
+    		// swap and bubble up
+    		var tmp = _arr[i];
+    		_arr[i] = _arr[parent(i)];
+    		_arr[parent(i)] = tmp;
+    		
     		this.bubbleUp(parent(i));
     	}
     }
