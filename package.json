@@ -1,0 +1,17 @@
+{
+  "name": "jsheap",
+  "version": "0.0.1",
+  "description": "Binary heap trees implementation",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/oss6/jsheap"
+  },
+  "keywords": [
+    "heaps",
+    "trees",
+    "binary"
+  ],
+  "license": "MIT",
+  "author": "Ossama Edbali <ossedb@gmail.com> (https://ossamaedbali.wordpress.com)"
+}
