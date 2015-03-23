@@ -36,4 +36,9 @@ suite('HeapTree', function () {
 		});
 		assert.equal(1, heap.lastLeaf());
 	});
+	
+	test('level', function () {
+		heap = new ht();
+		assert.equal(2, heap.level(5));
+	});
 });
