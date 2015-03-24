@@ -1,17 +1,21 @@
 var HeapTree = function (params) {
+    // Unpack arguments + attributes
 	params = params || {};
     var _arr = params.src || [];
     var _cmp = params.comparator || function (a, b) { return a - b; };
     
+    // Polyfills
     Math.log2 = Math.log2 || function(x) {
   		return Math.log(x) / Math.LN2;
 	};
     
+    // 'Private' members
     var intDiv = function (a, b) {
 		var result = a / b;
 		return result >= 0 ? Math.floor(result) : Math.ceil(result);
 	}
     
+    // Public members
     this.root = function () {
     	return this.isEmpty() ? undefined : _arr[0];
     };
@@ -102,8 +106,14 @@ var HeapTree = function (params) {
 }
 
 HeapTree.heapify = function (arr) {
+    HeapTree ht = new HeapTree({
+        src: arr
+    });
+    
 	for (var i = arr.length - 1; i > 0; i--)
-		this.bubbleDown(i);
+        ht.bubbleDown(i);
+    
+    return ht;
 };
 
-module.exports = HeapTree;
+module.exports.HeapTree = HeapTree;
