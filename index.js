@@ -13,7 +13,7 @@ var HeapTree = function (params) {
     var intDiv = function (a, b) {
 		var result = a / b;
 		return result >= 0 ? Math.floor(result) : Math.ceil(result);
-	}
+	};
     
     // Public members
     this.root = function () {
@@ -30,7 +30,7 @@ var HeapTree = function (params) {
     
     this.level = function (i) {
     	return Math.floor(Math.log2(i));
-    }
+    };
     
     this.parent = function (i) {
     	return intDiv(i, 2);
@@ -38,11 +38,11 @@ var HeapTree = function (params) {
     
     this.left = function (i) {
     	return 2 * i;
-    }
+    };
     
     this.right = function (i) {
     	return 2 * i + 1;
-    }
+    };
 	
 	this.bubbleUp = function (i) {
     	if (i === 0) // is root
@@ -50,41 +50,41 @@ var HeapTree = function (params) {
     	else if (heap[i] > heap[this.parent(i)]) {
     		// swap and bubble up
     		var tmp = _arr[i];
-    		_arr[i] = _arr[parent(i)];
-    		_arr[parent(i)] = tmp;
+    		_arr[i] = _arr[this.parent(i)];
+    		_arr[this.parent(i)] = tmp;
     		
-    		this.bubbleUp(parent(i));
+    		this.bubbleUp(this.parent(i));
     	}
-    }
+    };
 	
 	this.bubbleDown = function (i) {
-		var n = arr.length - 1;
+		var n = _arr.length - 1;
 		var tmp;
 		
-		if (left(i) > n) // no children
+		if (this.left(i) > n) // no children
 			return
-		else if (right(i) > n) { // only left child
-			if (_arr[i] < _arr[left(i)]) {
+		else if (this.right(i) > n) { // only left child
+			if (_arr[i] < _arr[this.left(i)]) {
 				tmp = _arr[i];
-				_arr[i] = _arr[left(i)];
-				_arr[left(i)] = tmp;
+				_arr[i] = _arr[this.left(i)];
+				_arr[this.left(i)] = tmp;
 			}
 		}
 		else { // Two children
-			if (_arr[left(i)] > _arr[right(i)] && _arr[i] < _arr[left(i)]) {
+			if (_arr[this.left(i)] > _arr[this.right(i)] && _arr[i] < _arr[this.left(i)]) {
 				tmp = _arr[i];
-				_arr[i] = _arr[left(i)];
-				_arr[left(i)] = tmp;
-				bubbleDown(left(i));
+				_arr[i] = _arr[this.left(i)];
+				_arr[this.left(i)] = tmp;
+				this.bubbleDown(this.left(i));
 			}
-			else if (_arr[i] < _arr[right(i)]) {
+			else if (_arr[i] < _arr[this.right(i)]) {
 				tmp = _arr[i];
-				_arr[i] = _arr[right(i)];
-				_arr[right(i)] = tmp;
-				bubbleDown(right(i));
+				_arr[i] = _arr[this.right(i)];
+				_arr[this.right(i)] = tmp;
+                this.bubbleDown(this.right(i));
 			}
 		}
-	}
+	};
 	
     this.insert = function (k) {
 		_arr.push(k);
@@ -103,10 +103,10 @@ var HeapTree = function (params) {
     	this.bubbleUp(i);
     	this.bubbleDown(i);
     };
-}
+};
 
 HeapTree.heapify = function (arr) {
-    HeapTree ht = new HeapTree({
+    var ht = new HeapTree({
         src: arr
     });
     
