@@ -3,7 +3,9 @@ var HeapTree = function (params) {
 	params = params || {};
     var _arr = params.src || [];
     var _cmp = params.comparator || function (a, b) { return a - b; };
-    
+
+
+
     // Polyfills
     Math.log2 = Math.log2 || function(x) {
   		return Math.log(x) / Math.LN2;
@@ -116,4 +118,8 @@ HeapTree.heapify = function (arr) {
     return ht;
 };
 
-module.exports.HeapTree = HeapTree;
+module.exports = HeapTree;
+
+/*var ht = require('./');
+var heap = new ht();
+console.log(heap);*/

@@ -12,9 +12,8 @@
     "trees",
     "binary"
   ],
-  "repository" : {
-  	"type" : "git",
-  	"url" : "http://github.com/oss6/jsheap.git"
+  "scripts": {
+    "test": "mocha -u tdd test.js"
   },
   "devDependencies": {
     "mocha": "2.2.1"
