@@ -10,7 +10,7 @@
   "keywords": [
     "heaps",
     "trees",
-    "binary"
+    "binary heaps"
   ],
   "scripts": {
     "test": "mocha -u tdd test.js"
@@ -19,5 +19,5 @@
     "mocha": "2.2.1"
   },
   "license": "MIT",
-  "author": "Ossama Edbali <ossedb@gmail.com> (https://ossamaedbali.wordpress.com)"
+  "author": "Ossama Edbali <ossedb@gmail.com> (https://oss6.github.io)"
 }
