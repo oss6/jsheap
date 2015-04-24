@@ -1,4 +1,4 @@
-# jsheap
+# jsheap [![Build Status](https://travis-ci.org/oss6/jsheap.svg)](https://travis-ci.org/oss6/jsheap)
 > Binary heaps implementation in Javascript
 
 A binary heap is a complete binary tree which satisfies the heap ordering property. The ordering can be one of two types:
